@@ -1,15 +1,12 @@
 #ifndef SEQUENCEFILEREADER_H
 #define SEQUENCEFILEREADER_H
 
-#include <vector>
-#include <string>
-using std::vector;
-using std::string;
+#include "BitSequenceList.h"
 
 class BitSequenceFileReader {
 public:
 	BitSequenceFileReader(string fileName);
-	vector<string> readSequences();
+	BitSequenceList readSequences();
 
 private:
 	string fileName;

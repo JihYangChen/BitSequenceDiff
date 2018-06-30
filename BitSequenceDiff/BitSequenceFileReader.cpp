@@ -5,14 +5,14 @@ using namespace std;
 
 BitSequenceFileReader::BitSequenceFileReader(string fileName) : fileName(fileName) {}
 
-vector<string> BitSequenceFileReader::readSequences() {
+BitSequenceList BitSequenceFileReader::readSequences() {
 	ifstream file(fileName);
 	string line;
-	vector<string> sequenseList;
+	vector<BitSequence *> sequenseList;
 
 	if (file.is_open()) {
 		while (getline(file, line)) {
-			sequenseList.push_back(line);
+			sequenseList.push_back(new BitSequence(line));
 		}
 		file.close();
 	}
@@ -22,5 +22,5 @@ vector<string> BitSequenceFileReader::readSequences() {
 		exit(-1);
 	}
 
-	return sequenseList;
+	return BitSequenceList(sequenseList);
 }
