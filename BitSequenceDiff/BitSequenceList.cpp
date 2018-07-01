@@ -1,4 +1,8 @@
 #include "BitSequenceList.h"
+#include <algorithm>
+#include <iostream>
+using std::next_permutation;
+using std::sort;
 
 BitSequenceList::BitSequenceList(vector<BitSequence *> bitSequenceList) : bitSequenceList(bitSequenceList) {}
 
@@ -14,4 +18,23 @@ string BitSequenceList::getDisplayString() {
 	for (int i = 0; i < bitSequenceList.size(); i++)
 		displayString += "[" + std::to_string(i+1) + "]: " + bitSequenceList[i]->getBitSequence() + "\n";
 	return displayString;
+}
+
+BitSequenceList BitSequenceList::getMinDiffBitAmountListWithBruteForce() {
+	vector<BitSequence *> permutationBitSequenceList = bitSequenceList;
+	sort(permutationBitSequenceList.begin(), permutationBitSequenceList.end());
+	
+	BitSequenceList minDiffBitAmountList(permutationBitSequenceList);
+	int minDiffBitAmount = minDiffBitAmountList.calculateDiffBitAmount();
+
+	while (next_permutation(permutationBitSequenceList.begin(), permutationBitSequenceList.end())) {
+		BitSequenceList list(permutationBitSequenceList);
+		int diffBitAmount = list.calculateDiffBitAmount();
+		if (diffBitAmount < minDiffBitAmount) {
+			minDiffBitAmount = diffBitAmount;
+			minDiffBitAmountList = list;
+		}
+	};
+
+	return minDiffBitAmountList;
 }

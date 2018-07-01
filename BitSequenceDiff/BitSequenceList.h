@@ -10,6 +10,7 @@ public:
 	BitSequenceList(vector<BitSequence *> bitSequenceList);
 	int calculateDiffBitAmount();
 	string getDisplayString();
+	BitSequenceList getMinDiffBitAmountListWithBruteForce();
 
 private:
 	vector<BitSequence *> bitSequenceList;
