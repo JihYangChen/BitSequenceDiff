@@ -17,7 +17,7 @@ BitSequenceList BitSequenceFileReader::readSequences() {
 		file.close();
 	}
 	else {
-		std::cerr << "Exception occured when reading file" + fileName + "\n";
+		std::cerr << "Exception occurred when reading file" + fileName + "\n";
 		system("PAUSE");
 		exit(-1);
 	}

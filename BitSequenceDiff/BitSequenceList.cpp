@@ -1,6 +1,5 @@
 #include "BitSequenceList.h"
 #include <algorithm>
-#include <iostream>
 using std::next_permutation;
 using std::sort;
 

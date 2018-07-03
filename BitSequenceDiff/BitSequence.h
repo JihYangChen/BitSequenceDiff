@@ -2,7 +2,9 @@
 #define BITSEQUENCE_H
 
 #include <string>
+#include <map>
 using std::string;
+using std::map;
 
 class BitSequence {
 public:
@@ -12,6 +14,7 @@ public:
 
 private:
 	string bitSequence;
+	map<BitSequence *, int> diffBitAmountMap;
 };
 
 #endif
