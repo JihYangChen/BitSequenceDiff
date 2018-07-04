@@ -9,10 +9,16 @@ int main(int argc, char *argv[]) {
 	
 	cout << "Bit Sequence List: \n" << bitSequenceList.getDisplayString() << "\n";
 	cout << "Sequence list different bit amount: " << bitSequenceList.calculateDiffBitAmount() << "\n\n";
-	
+
+	BitSequenceList MinDiffBitAmountList = bitSequenceList.getMinDiffBitAmountListWithTSPApproximation();
+	cout << "Approximate minimum different bit amount sequence list : \n" << MinDiffBitAmountList.getDisplayString() << "\n";
+	cout << "Approximate minimum sequence list different bit amount: " << MinDiffBitAmountList.calculateDiffBitAmount() << "\n";
+
+	/*
 	BitSequenceList MinDiffBitAmountList = bitSequenceList.getMinDiffBitAmountListWithBruteForce();
 	cout << "Minimum different bit amount sequence list : \n" << MinDiffBitAmountList.getDisplayString() << "\n";
 	cout << "Minimum sequence list different bit amount: " << MinDiffBitAmountList.calculateDiffBitAmount() << "\n";
+	*/
 
 	system("PAUSE");
 	return 0;

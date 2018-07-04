@@ -11,9 +11,13 @@ public:
 	int calculateDiffBitAmount();
 	string getDisplayString();
 	BitSequenceList getMinDiffBitAmountListWithBruteForce();
+	BitSequenceList getMinDiffBitAmountListWithTSPApproximation();
 
 private:
 	vector<BitSequence *> bitSequenceList;
+	vector<struct Edge> kruskalMST();
+	vector<struct Edge> getSortedEdges();
+	void preorderTraversal(BitSequence *currentVertex, vector<struct Edge> &edgesetsMST, vector<BitSequence *> &resultList);
 };
 
 #endif
