@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 	cout << "Bit Sequence List: \n" << bitSequenceList.getDisplayString() << "\n";
 	cout << "Sequence list different bit amount: " << bitSequenceList.calculateDiffBitAmount() << "\n\n";
 
-	BitSequenceList MinDiffBitAmountList = bitSequenceList.getMinDiffBitAmountListWithTSPApproximation();
+	BitSequenceList MinDiffBitAmountList = bitSequenceList.getMinDiffBitAmountListWithMSTApproximation();
 	cout << "Approximate minimum different bit amount sequence list : \n" << MinDiffBitAmountList.getDisplayString() << "\n";
 	cout << "Approximate minimum sequence list different bit amount: " << MinDiffBitAmountList.calculateDiffBitAmount() << "\n";
 

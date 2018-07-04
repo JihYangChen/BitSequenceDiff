@@ -95,7 +95,7 @@ BitSequenceList BitSequenceList::getMinDiffBitAmountListWithBruteForce() {
 	return minDiffBitAmountList;
 }
 
-BitSequenceList BitSequenceList::getMinDiffBitAmountListWithTSPApproximation() {
+BitSequenceList BitSequenceList::getMinDiffBitAmountListWithMSTApproximation() {
 	vector<struct Edge> edgesetMST =  kruskalMST();
 	vector<BitSequence *> preorderSequenceList;
 	preorderTraversal(edgesetMST[0].from, edgesetMST, preorderSequenceList);

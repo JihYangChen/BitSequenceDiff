@@ -11,7 +11,7 @@ public:
 	int calculateDiffBitAmount();
 	string getDisplayString();
 	BitSequenceList getMinDiffBitAmountListWithBruteForce();
-	BitSequenceList getMinDiffBitAmountListWithTSPApproximation();
+	BitSequenceList getMinDiffBitAmountListWithMSTApproximation();
 
 private:
 	vector<BitSequence *> bitSequenceList;
